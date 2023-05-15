@@ -13,7 +13,9 @@ import salesRoutes from "./routes/sales.js";
 
 /* Data imports */
 import User from "./models/User.js";
-import { dataUser } from "./data/index.js";
+import Product from "./models/Product.js";
+import ProductStat from "./models/ProductStat.js";
+import { dataUser, dataProduct, dataProductStat } from "./data/index.js";
 
 /* Configuration */
 dotenv.config("./env");
@@ -47,5 +49,7 @@ mongoose
 
 const PORT = 8000;
 app.listen(PORT, () => {
+  /* Product.insertMany(dataProduct);
+  ProductStat.insertMany(dataProductStat); */
   console.log(`App running on port ${PORT}`);
 });
